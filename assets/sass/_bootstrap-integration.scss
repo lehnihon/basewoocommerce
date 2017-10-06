@@ -1,0 +1,19 @@
+#primary{
+	@extend .container;
+}
+
+.wp-post-image{
+	@extend .img-fluid;
+}
+
+.site-main{
+	@extend .row;
+}
+
+.woocommerce-products-header{
+	 @extend .w-100;
+}
+
+.wcapf-before-products{
+	 @extend .col-md;
+}
