@@ -1,3 +1,7 @@
+/*
+BASE
+*/
+
 #primary{
 	@extend .container;
 }
@@ -6,14 +10,115 @@
 	@extend .img-fluid;
 }
 
-.site-main{
+.site-main, .products, .woocommerce-tabs, #product-single{
 	@extend .row;
 }
 
 .woocommerce-products-header{
-	 @extend .w-100;
+	@extend .w-100;
 }
 
 .wcapf-before-products{
 	 @extend .col-md;
 }
+
+.woocommerce-product-gallery{
+	@extend .col-md-5;
+}
+
+.summary{
+	@extend .col-md-7;
+	text-align:left;
+}
+
+.remove{
+	display: block;
+    font-size: 1.5em;
+    height: 1em;
+    width: 1em;
+    text-align: center;
+    line-height: 1;
+    border-radius: 100%;
+    color: red!important;
+    text-decoration: none;
+    font-weight: 700;
+    border: 0;
+    padding:5px;
+}
+
+/*
+CART
+*/
+.product-quantity{
+	.qty{
+		float:left;
+		width: 38.58px;
+		height: 38px;
+		border:1px solid rgba(0,0,0,.1);
+		border-radius:4px;
+		margin-right:10px;
+	}
+	.remove{
+		float:left;
+	}
+}
+input[name='update_cart']{
+	visibility: hidden;
+}
+
+table.cart{
+	border-radius: 5px !important;
+	border:1px solid $color1 !important;
+	width:100%;
+	border-collapse: separate;
+	text-align:left;
+	margin-bottom:20px;
+
+	thead{
+		background-color:$color1;
+		color:#FFF;
+
+		th{
+			font-size:14px;
+		}
+	}
+
+	tbody{
+		td{
+			border-top:1px solid rgba(0, 0, 0, 0.1);
+		}
+		tr:first-child td{
+			border-top:0px;
+		}
+	}
+}
+
+.cart-collaterals{
+	.cart_totals {
+		@include clearfix;
+		@extend .w-100;
+		margin-bottom:20px;
+
+		.shop_table{
+			text-align:left;
+			float:right;
+			width:30%;
+			font-size:14px;
+		}
+	}
+	.cart-options{
+		@include clearfix;
+		.wc-keep-buying{
+			float:left;
+			width:50%;
+			text-align:left;
+		}
+		.wc-proceed-to-checkout{
+			float:left;
+			width:50%;
+			text-align:right;
+		}
+	}
+}
+
+

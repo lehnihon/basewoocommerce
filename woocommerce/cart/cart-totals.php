@@ -25,8 +25,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<?php do_action( 'woocommerce_before_cart_totals' ); ?>
 
-	<h2><?php _e( 'Cart totals', 'woocommerce' ); ?></h2>
-
 	<table cellspacing="0" class="shop_table shop_table_responsive">
 
 		<tr class="cart-subtotal">
@@ -97,10 +95,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	</table>
 
-	<div class="wc-proceed-to-checkout">
-		<?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
-	</div>
-
 	<?php do_action( 'woocommerce_after_cart_totals' ); ?>
 
 </div>
+<div class="cart-options">
+	<div class="wc-keep-buying">
+		<a class="btn btn-outline-secondary faa-parent animated-hover" href="<?php echo home_url( '/' ); ?>">
+		<i class="fa fa-shopping-basket faa-pulse"></i>
+		Continuar comprando
+		</a>
+	</div>
+	<div class="wc-proceed-to-checkout">
+		<?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
+	</div>
+</div>
+

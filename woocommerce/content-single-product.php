@@ -36,7 +36,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 }
 ?>
 
-<div id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
+<div id="product-single" <?php post_class(); ?>>
 
 	<?php
 		/**

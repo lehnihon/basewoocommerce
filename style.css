@@ -536,7 +536,7 @@ pre {
   padding-left: 15px;
   width: 100%; }
 
-.row, .site-main {
+.row, .site-main, .products, .woocommerce-tabs, #product-single {
   display: flex;
   flex-wrap: wrap;
   margin-right: -15px;
@@ -552,7 +552,7 @@ pre {
 
 .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col,
 .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm,
-.col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .wcapf-before-products,
+.col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .woocommerce-product-gallery, .col-md-6, .col-md-7, .summary, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .wcapf-before-products,
 .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg,
 .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl,
 .col-xl-auto {
@@ -777,7 +777,7 @@ pre {
     flex: 0 0 33.33333%;
     max-width: 33.33333%; }
 
-  .col-md-5 {
+  .col-md-5, .woocommerce-product-gallery {
     flex: 0 0 41.66667%;
     max-width: 41.66667%; }
 
@@ -785,7 +785,7 @@ pre {
     flex: 0 0 50%;
     max-width: 50%; }
 
-  .col-md-7 {
+  .col-md-7, .summary {
     flex: 0 0 58.33333%;
     max-width: 58.33333%; }
 
@@ -1267,15 +1267,18 @@ select.form-control:focus::-ms-value {
   border-width: 1px 0; }
   .form-control-plaintext.form-control-sm, .input-group-sm > .form-control-plaintext.form-control,
   .input-group-sm > .form-control-plaintext.input-group-addon,
-  .input-group-sm > .input-group-btn > .form-control-plaintext.btn, .form-control-plaintext.form-control-lg, .input-group-lg > .form-control-plaintext.form-control,
+  .input-group-sm > .input-group-btn > .form-control-plaintext.btn,
+  .input-group-sm > .input-group-btn > .form-control-plaintext.checkout-button, .form-control-plaintext.form-control-lg, .input-group-lg > .form-control-plaintext.form-control,
   .input-group-lg > .form-control-plaintext.input-group-addon,
-  .input-group-lg > .input-group-btn > .form-control-plaintext.btn {
+  .input-group-lg > .input-group-btn > .form-control-plaintext.btn,
+  .input-group-lg > .input-group-btn > .form-control-plaintext.checkout-button {
     padding-right: 0;
     padding-left: 0; }
 
 .form-control-sm, .input-group-sm > .form-control,
 .input-group-sm > .input-group-addon,
-.input-group-sm > .input-group-btn > .btn {
+.input-group-sm > .input-group-btn > .btn,
+.input-group-sm > .input-group-btn > .checkout-button {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -1283,12 +1286,14 @@ select.form-control:focus::-ms-value {
 
 select.form-control-sm:not([size]):not([multiple]), .input-group-sm > select.form-control:not([size]):not([multiple]),
 .input-group-sm > select.input-group-addon:not([size]):not([multiple]),
-.input-group-sm > .input-group-btn > select.btn:not([size]):not([multiple]) {
+.input-group-sm > .input-group-btn > select.btn:not([size]):not([multiple]),
+.input-group-sm > .input-group-btn > select.checkout-button:not([size]):not([multiple]) {
   height: calc(1.8125rem + 2px); }
 
 .form-control-lg, .input-group-lg > .form-control,
 .input-group-lg > .input-group-addon,
-.input-group-lg > .input-group-btn > .btn {
+.input-group-lg > .input-group-btn > .btn,
+.input-group-lg > .input-group-btn > .checkout-button {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   line-height: 1.5;
@@ -1296,7 +1301,8 @@ select.form-control-sm:not([size]):not([multiple]), .input-group-sm > select.for
 
 select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.form-control:not([size]):not([multiple]),
 .input-group-lg > select.input-group-addon:not([size]):not([multiple]),
-.input-group-lg > .input-group-btn > select.btn:not([size]):not([multiple]) {
+.input-group-lg > .input-group-btn > select.btn:not([size]):not([multiple]),
+.input-group-lg > .input-group-btn > select.checkout-button:not([size]):not([multiple]) {
   height: calc(2.875rem + 2px); }
 
 .form-group {
@@ -1481,7 +1487,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
     .form-inline .has-feedback .form-control-feedback {
       top: 0; } }
 
-.btn {
+.btn, .checkout-button {
   display: inline-block;
   font-weight: normal;
   text-align: center;
@@ -1494,18 +1500,19 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
   line-height: 1.25;
   border-radius: 0.25rem;
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
-  .btn:focus, .btn:hover {
+  .btn:focus, .checkout-button:focus, .btn:hover, .checkout-button:hover {
     text-decoration: none; }
-  .btn:focus, .btn.focus {
+  .btn:focus, .checkout-button:focus, .btn.focus, .focus.checkout-button {
     outline: 0;
     box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); }
-  .btn.disabled, .btn:disabled {
+  .btn.disabled, .disabled.checkout-button, .btn:disabled, .checkout-button:disabled {
     opacity: .65; }
-  .btn:active, .btn.active {
+  .btn:active, .checkout-button:active, .btn.active, .active.checkout-button {
     background-image: none; }
 
-a.btn.disabled,
-fieldset[disabled] a.btn {
+a.btn.disabled, a.disabled.checkout-button,
+fieldset[disabled] a.btn,
+fieldset[disabled] a.checkout-button {
   pointer-events: none; }
 
 .btn-primary {
@@ -1824,13 +1831,13 @@ fieldset[disabled] a.btn {
     .btn-link:disabled:focus, .btn-link:disabled:hover {
       text-decoration: none; }
 
-.btn-lg, .btn-group-lg > .btn {
+.btn-lg, .btn-group-lg > .btn, .btn-group-lg > .checkout-button {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   line-height: 1.5;
   border-radius: 0.3rem; }
 
-.btn-sm, .btn-group-sm > .btn {
+.btn-sm, .btn-group-sm > .btn, .btn-group-sm > .checkout-button {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -1962,26 +1969,38 @@ tbody.collapse.show {
   position: relative;
   display: inline-flex;
   vertical-align: middle; }
-  .btn-group > .btn,
-  .btn-group-vertical > .btn {
+  .btn-group > .btn, .btn-group > .checkout-button,
+  .btn-group-vertical > .btn,
+  .btn-group-vertical > .checkout-button {
     position: relative;
     flex: 0 1 auto;
     margin-bottom: 0; }
-    .btn-group > .btn:hover,
-    .btn-group-vertical > .btn:hover {
+    .btn-group > .btn:hover, .btn-group > .checkout-button:hover,
+    .btn-group-vertical > .btn:hover,
+    .btn-group-vertical > .checkout-button:hover {
       z-index: 2; }
-    .btn-group > .btn:focus, .btn-group > .btn:active, .btn-group > .btn.active,
+    .btn-group > .btn:focus, .btn-group > .checkout-button:focus, .btn-group > .btn:active, .btn-group > .checkout-button:active, .btn-group > .btn.active, .btn-group > .active.checkout-button,
     .btn-group-vertical > .btn:focus,
+    .btn-group-vertical > .checkout-button:focus,
     .btn-group-vertical > .btn:active,
-    .btn-group-vertical > .btn.active {
+    .btn-group-vertical > .checkout-button:active,
+    .btn-group-vertical > .btn.active,
+    .btn-group-vertical > .active.checkout-button {
       z-index: 2; }
-  .btn-group .btn + .btn,
+  .btn-group .btn + .btn, .btn-group .checkout-button + .btn, .btn-group .btn + .checkout-button, .btn-group .checkout-button + .checkout-button,
   .btn-group .btn + .btn-group,
+  .btn-group .checkout-button + .btn-group,
   .btn-group .btn-group + .btn,
+  .btn-group .btn-group + .checkout-button,
   .btn-group .btn-group + .btn-group,
   .btn-group-vertical .btn + .btn,
+  .btn-group-vertical .checkout-button + .btn,
+  .btn-group-vertical .btn + .checkout-button,
+  .btn-group-vertical .checkout-button + .checkout-button,
   .btn-group-vertical .btn + .btn-group,
+  .btn-group-vertical .checkout-button + .btn-group,
   .btn-group-vertical .btn-group + .btn,
+  .btn-group-vertical .btn-group + .checkout-button,
   .btn-group-vertical .btn-group + .btn-group {
     margin-left: -1px; }
 
@@ -1992,16 +2011,16 @@ tbody.collapse.show {
   .btn-toolbar .input-group {
     width: auto; }
 
-.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > .checkout-button:not(:first-child):not(:last-child):not(.dropdown-toggle) {
   border-radius: 0; }
 
-.btn-group > .btn:first-child {
+.btn-group > .btn:first-child, .btn-group > .checkout-button:first-child {
   margin-left: 0; }
-  .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+  .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > .checkout-button:first-child:not(:last-child):not(.dropdown-toggle) {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0; }
 
-.btn-group > .btn:last-child:not(:first-child),
+.btn-group > .btn:last-child:not(:first-child), .btn-group > .checkout-button:last-child:not(:first-child),
 .btn-group > .dropdown-toggle:not(:first-child) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0; }
@@ -2009,29 +2028,29 @@ tbody.collapse.show {
 .btn-group > .btn-group {
   float: left; }
 
-.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {
+.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn, .btn-group > .btn-group:not(:first-child):not(:last-child) > .checkout-button {
   border-radius: 0; }
 
-.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child,
+.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child, .btn-group > .btn-group:first-child:not(:last-child) > .checkout-button:last-child,
 .btn-group > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0; }
 
-.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child {
+.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child, .btn-group > .btn-group:last-child:not(:first-child) > .checkout-button:first-child {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0; }
 
-.btn + .dropdown-toggle-split {
+.btn + .dropdown-toggle-split, .checkout-button + .dropdown-toggle-split {
   padding-right: 0.5625rem;
   padding-left: 0.5625rem; }
-  .btn + .dropdown-toggle-split::after {
+  .btn + .dropdown-toggle-split::after, .checkout-button + .dropdown-toggle-split::after {
     margin-left: 0; }
 
-.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split {
+.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, .btn-group-sm > .checkout-button + .dropdown-toggle-split {
   padding-right: 0.375rem;
   padding-left: 0.375rem; }
 
-.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split {
+.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, .btn-group-lg > .checkout-button + .dropdown-toggle-split {
   padding-right: 0.75rem;
   padding-left: 0.75rem; }
 
@@ -2040,41 +2059,46 @@ tbody.collapse.show {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center; }
-  .btn-group-vertical .btn,
+  .btn-group-vertical .btn, .btn-group-vertical .checkout-button,
   .btn-group-vertical .btn-group {
     width: 100%; }
-  .btn-group-vertical > .btn + .btn,
+  .btn-group-vertical > .btn + .btn, .btn-group-vertical > .checkout-button + .btn, .btn-group-vertical > .btn + .checkout-button, .btn-group-vertical > .checkout-button + .checkout-button,
   .btn-group-vertical > .btn + .btn-group,
+  .btn-group-vertical > .checkout-button + .btn-group,
   .btn-group-vertical > .btn-group + .btn,
+  .btn-group-vertical > .btn-group + .checkout-button,
   .btn-group-vertical > .btn-group + .btn-group {
     margin-top: -1px;
     margin-left: 0; }
 
-.btn-group-vertical > .btn:not(:first-child):not(:last-child) {
+.btn-group-vertical > .btn:not(:first-child):not(:last-child), .btn-group-vertical > .checkout-button:not(:first-child):not(:last-child) {
   border-radius: 0; }
-.btn-group-vertical > .btn:first-child:not(:last-child) {
+.btn-group-vertical > .btn:first-child:not(:last-child), .btn-group-vertical > .checkout-button:first-child:not(:last-child) {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0; }
-.btn-group-vertical > .btn:last-child:not(:first-child) {
+.btn-group-vertical > .btn:last-child:not(:first-child), .btn-group-vertical > .checkout-button:last-child:not(:first-child) {
   border-top-left-radius: 0;
   border-top-right-radius: 0; }
 
-.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn {
+.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .checkout-button {
   border-radius: 0; }
 
-.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child,
+.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > .checkout-button:last-child,
 .btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0; }
 
-.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child {
+.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > .checkout-button:first-child {
   border-top-left-radius: 0;
   border-top-right-radius: 0; }
 
-[data-toggle="buttons"] > .btn input[type="radio"],
+[data-toggle="buttons"] > .btn input[type="radio"], [data-toggle="buttons"] > .checkout-button input[type="radio"],
 [data-toggle="buttons"] > .btn input[type="checkbox"],
+[data-toggle="buttons"] > .checkout-button input[type="checkbox"],
 [data-toggle="buttons"] > .btn-group > .btn input[type="radio"],
-[data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"] {
+[data-toggle="buttons"] > .btn-group > .checkout-button input[type="radio"],
+[data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"],
+[data-toggle="buttons"] > .btn-group > .checkout-button input[type="checkbox"] {
   position: absolute;
   clip: rect(0, 0, 0, 0);
   pointer-events: none; }
@@ -2121,13 +2145,15 @@ tbody.collapse.show {
   border-radius: 0.25rem; }
   .input-group-addon.form-control-sm,
   .input-group-sm > .input-group-addon,
-  .input-group-sm > .input-group-btn > .input-group-addon.btn {
+  .input-group-sm > .input-group-btn > .input-group-addon.btn,
+  .input-group-sm > .input-group-btn > .input-group-addon.checkout-button {
     padding: 0.25rem 0.5rem;
     font-size: 0.875rem;
     border-radius: 0.2rem; }
   .input-group-addon.form-control-lg,
   .input-group-lg > .input-group-addon,
-  .input-group-lg > .input-group-btn > .input-group-addon.btn {
+  .input-group-lg > .input-group-btn > .input-group-addon.btn,
+  .input-group-lg > .input-group-btn > .input-group-addon.checkout-button {
     padding: 0.5rem 1rem;
     font-size: 1.25rem;
     border-radius: 0.3rem; }
@@ -2138,10 +2164,14 @@ tbody.collapse.show {
 .input-group .form-control:not(:last-child),
 .input-group-addon:not(:last-child),
 .input-group-btn:not(:last-child) > .btn,
+.input-group-btn:not(:last-child) > .checkout-button,
 .input-group-btn:not(:last-child) > .btn-group > .btn,
+.input-group-btn:not(:last-child) > .btn-group > .checkout-button,
 .input-group-btn:not(:last-child) > .dropdown-toggle,
 .input-group-btn:not(:first-child) > .btn:not(:last-child):not(.dropdown-toggle),
-.input-group-btn:not(:first-child) > .btn-group:not(:last-child) > .btn {
+.input-group-btn:not(:first-child) > .checkout-button:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:not(:first-child) > .btn-group:not(:last-child) > .btn,
+.input-group-btn:not(:first-child) > .btn-group:not(:last-child) > .checkout-button {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0; }
 
@@ -2151,10 +2181,14 @@ tbody.collapse.show {
 .input-group .form-control:not(:first-child),
 .input-group-addon:not(:first-child),
 .input-group-btn:not(:first-child) > .btn,
+.input-group-btn:not(:first-child) > .checkout-button,
 .input-group-btn:not(:first-child) > .btn-group > .btn,
+.input-group-btn:not(:first-child) > .btn-group > .checkout-button,
 .input-group-btn:not(:first-child) > .dropdown-toggle,
 .input-group-btn:not(:last-child) > .btn:not(:first-child),
-.input-group-btn:not(:last-child) > .btn-group:not(:first-child) > .btn {
+.input-group-btn:not(:last-child) > .checkout-button:not(:first-child),
+.input-group-btn:not(:last-child) > .btn-group:not(:first-child) > .btn,
+.input-group-btn:not(:last-child) > .btn-group:not(:first-child) > .checkout-button {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0; }
 
@@ -2165,22 +2199,22 @@ tbody.collapse.show {
   position: relative;
   font-size: 0;
   white-space: nowrap; }
-  .input-group-btn > .btn {
+  .input-group-btn > .btn, .input-group-btn > .checkout-button {
     position: relative;
     background-clip: padding-box;
     border: 1px solid rgba(0, 0, 0, 0.15); }
-    .input-group-btn > .btn + .btn {
+    .input-group-btn > .btn + .btn, .input-group-btn > .checkout-button + .btn, .input-group-btn > .btn + .checkout-button, .input-group-btn > .checkout-button + .checkout-button {
       margin-left: -1px; }
-    .input-group-btn > .btn:focus, .input-group-btn > .btn:active, .input-group-btn > .btn:hover {
+    .input-group-btn > .btn:focus, .input-group-btn > .checkout-button:focus, .input-group-btn > .btn:active, .input-group-btn > .checkout-button:active, .input-group-btn > .btn:hover, .input-group-btn > .checkout-button:hover {
       z-index: 3; }
-  .input-group-btn:not(:last-child) > .btn,
+  .input-group-btn:not(:last-child) > .btn, .input-group-btn:not(:last-child) > .checkout-button,
   .input-group-btn:not(:last-child) > .btn-group {
     margin-right: -1px; }
-  .input-group-btn:not(:first-child) > .btn,
+  .input-group-btn:not(:first-child) > .btn, .input-group-btn:not(:first-child) > .checkout-button,
   .input-group-btn:not(:first-child) > .btn-group {
     z-index: 2;
     margin-left: -1px; }
-    .input-group-btn:not(:first-child) > .btn:focus, .input-group-btn:not(:first-child) > .btn:active, .input-group-btn:not(:first-child) > .btn:hover,
+    .input-group-btn:not(:first-child) > .btn:focus, .input-group-btn:not(:first-child) > .checkout-button:focus, .input-group-btn:not(:first-child) > .btn:active, .input-group-btn:not(:first-child) > .checkout-button:active, .input-group-btn:not(:first-child) > .btn:hover, .input-group-btn:not(:first-child) > .checkout-button:hover,
     .input-group-btn:not(:first-child) > .btn-group:focus,
     .input-group-btn:not(:first-child) > .btn-group:active,
     .input-group-btn:not(:first-child) > .btn-group:hover {
@@ -2867,7 +2901,7 @@ tbody.collapse.show {
   .badge:empty {
     display: none; }
 
-.btn .badge {
+.btn .badge, .checkout-button .badge {
   position: relative;
   top: -1px; }
 
@@ -4611,7 +4645,7 @@ a.bg-dark:focus, a.bg-dark:hover {
 .w-75 {
   width: 75% !important; }
 
-.w-100, .woocommerce-products-header {
+.w-100, .woocommerce-products-header, .cart-collaterals .cart_totals {
   width: 100% !important; }
 
 .h-25 {
@@ -6011,10 +6045,90 @@ a.text-dark:focus, a.text-dark:hover {
 .invisible {
   visibility: hidden !important; }
 
+/*
+BASE
+*/
+.summary {
+  text-align: left; }
+
+.remove {
+  display: block;
+  font-size: 1.5em;
+  height: 1em;
+  width: 1em;
+  text-align: center;
+  line-height: 1;
+  border-radius: 100%;
+  color: red !important;
+  text-decoration: none;
+  font-weight: 700;
+  border: 0;
+  padding: 5px; }
+
+/*
+CART
+*/
+.product-quantity .qty {
+  float: left;
+  width: 38.58px;
+  height: 38px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  margin-right: 10px; }
+.product-quantity .remove {
+  float: left; }
+
+input[name='update_cart'] {
+  visibility: hidden; }
+
+table.cart {
+  border-radius: 5px !important;
+  border: 1px solid #0f834d !important;
+  width: 100%;
+  border-collapse: separate;
+  text-align: left;
+  margin-bottom: 20px; }
+  table.cart thead {
+    background-color: #0f834d;
+    color: #FFF; }
+    table.cart thead th {
+      font-size: 14px; }
+  table.cart tbody td {
+    border-top: 1px solid rgba(0, 0, 0, 0.1); }
+  table.cart tbody tr:first-child td {
+    border-top: 0px; }
+
+.cart-collaterals .cart_totals {
+  margin-bottom: 20px; }
+  .cart-collaterals .cart_totals::after {
+    display: block;
+    clear: both;
+    content: ""; }
+  .cart-collaterals .cart_totals .shop_table {
+    text-align: left;
+    float: right;
+    width: 30%;
+    font-size: 14px; }
+.cart-collaterals .cart-options::after {
+  display: block;
+  clear: both;
+  content: ""; }
+.cart-collaterals .cart-options .wc-keep-buying {
+  float: left;
+  width: 50%;
+  text-align: left; }
+.cart-collaterals .cart-options .wc-proceed-to-checkout {
+  float: left;
+  width: 50%;
+  text-align: right; }
+
 body {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   color: #858585;
   text-align: center; }
+
+a {
+  color: #858585; }
 
 ul {
   padding: 0;
@@ -6022,6 +6136,20 @@ ul {
 
 .wow {
   visibility: hidden; }
+
+.box {
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 10px; }
+
+.checkout-button {
+  background-color: #0f834d;
+  color: #FFF; }
+
+.checkout-button:hover {
+  color: #0f834d;
+  background-color: #FFF;
+  border: 1px solid #0f834d; }
 
 section#footer {
   background-color: #00356b;

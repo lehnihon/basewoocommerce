@@ -8,7 +8,7 @@
 if ( ! function_exists( 'site_setup' ) ) :
 function site_setup() {
 	add_image_size('home-thumb',780,300,true);
-	//add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+	add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 }
 endif; // site_setup
 add_action( 'after_setup_theme', 'site_setup' );
@@ -19,6 +19,8 @@ add_action( 'after_setup_theme', 'site_setup' );
 function site_scripts() {
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
 	wp_enqueue_style( 'style-animate', get_template_directory_uri() ."/node_modules/animate.css/animate.min.css" );
+	wp_enqueue_style( 'style-font-awesome', get_template_directory_uri() ."/node_modules/font-awesome/css/font-awesome.min.css" );
+	wp_enqueue_style( 'style-font-awesome-animation', get_template_directory_uri() ."/node_modules/font-awesome-animation/dist/font-awesome-animation.min.css" );
 
 	wp_enqueue_script( 'script-jquery', get_template_directory_uri() .'/node_modules/jquery/dist/jquery.min.js');
 	wp_enqueue_script( 'script-popper', get_template_directory_uri() .'/node_modules/popper.js/dist/umd/popper.min.js');

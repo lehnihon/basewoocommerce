@@ -15,7 +15,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<link rel="shortcut icon" type="image/png" href="<?php echo dirname( get_bloginfo('stylesheet_url'))."/images/Data Certa Logistica Icone.png"; ?>" />
+
 <?php wp_head(); ?>
 <script>
 
@@ -25,39 +25,7 @@ new WOW().init();
 
 <body>
 <div id="page">
-	<section id="header">
-		<header>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-2 box clearfix">
-			            <span class="cor-amarelo">Operação: </span>
-			            <span class="texto-branco">11 <strong>2061-3138</strong></span>
-			          </div>
-			          <div class="col-md-4 box clearfix">
-			            <span class="cor-amarelo">Comercial: </span>
-			            <span class="texto-branco">11 <strong>96321-7360</strong></span>
-			          </div>
-					<div class="col-md-3 box clearfix">
-						<span class="cor-amarelo">Redes sociais </span>	
-						<ul class="redes_sociais_header clearfix">
-			              <li class="youtube"><a target="_blank" href="https://www.youtube.com/channel/UCb42k7qXDCeQSI7LvPDc8ZA"></a></li>
-			              <li class="instagram"><a target="_blank" href="https://www.instagram.com/datacerta"></a></li>
-			              <li class="twitter"><a target="_blank" href="https://twitter.com/datacertalog"></a></li>
-			              <li class="facebook"><a target="_blank" href="https://www.facebook.com/datacertalogistica"></a></li>
-			              <li class="linkedin"><a target="_blank" href="https://www.linkedin.com/company-beta/10804304"></a></li>
-						</ul>
-					</div>
-					<div class="col-md-3 box clearfix header-login">
-						<a href="http://34.200.50.59" class="btn-login pull-right">LOGIN</a>
-						<span class="cor-amarelo pull-right">Acesse com seu login </span>
-					</div>
-					<div class="col-md-3 box clearfix header-login-responsive">
-						<span class="cor-amarelo">Acesse com seu login </span>
-						<a href="http://34.200.50.59" class="btn-login pull-left">LOGIN</a>
-					</div>
-				</div>
-			</div>
-		</header>
+	<header>
 		<nav>
 			<div class="container">
 				<div class="row">
@@ -65,14 +33,19 @@ new WOW().init();
 						<a href="<?php echo home_url( '/' ); ?>"><img class="e-claro" src="<?php echo dirname( get_bloginfo('stylesheet_url'))."/assets/img/logo-top.png"; ?>" /></a>
 					</div>
 					<div class="col-md-9">
-						<li class="<?php echo esc_attr( $class ); ?>">
-				
-			</li>
-			<li>
-				<?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
-			</li>
+						<ul class="cart-item clearfix">
+							<li class="cart">
+								<img class="efeito-cinza" src="<?php echo dirname( get_bloginfo('stylesheet_url'))."/images/header-carrinho.png"; ?>" alt="" />
+							</li>
+							<li class="number">
+								<a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>">
+									<?php echo sprintf (_n( '%d item', '%d items', WC()->cart->cart_contents_count ), WC()->cart->cart_contents_count ); ?>
+								</a>
+							</li>
+						</ul>
 					</div>					
 				</div>
 			</div>
 		</nav>
-	</section>
+	</header>
+	<main>
