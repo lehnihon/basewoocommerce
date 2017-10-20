@@ -55,17 +55,35 @@ if ( ! function_exists( 'cart_update_qty_script' ) ) {
 	}
 }
 
-if ( ! function_exists( 'woo_remove_product_tabs' ) ) {
-	function woo_remove_product_tabs( $tabs ) {
+if ( ! function_exists( 'woocommerce_description' ) ) {
+	function woocommerce_description() {
+		global $post;
 
-	    unset( $tabs['reviews'] ); 			// Remove the reviews tab
-	    unset( $tabs['additional_information'] );  	// Remove the additional information tab
-
-	    return $tabs;
-
+		the_content();
 	}
 }
 
+if ( ! function_exists( 'woocommerce_button_icons' ) ) {
+	function woocommerce_button_icons() {
+	?>
+		<script>
+			jQuery('a.checkout-button').prepend('<i class="fa fa-credit-card faa-pulse"></i>')
+		</script>
+	<?php
+	}
+}
 
+if ( ! function_exists( 'woocommerce_keep_buying' ) ) {
+	function woocommerce_keep_buying() {
+	?>
+		<div class="wc-keep-buying">
+			<a class="btn btn-outline-secondary faa-parent animated-hover" href="<?php echo home_url( '/' ); ?>">
+			<i class="fa fa-shopping-basket faa-pulse"></i>
+			Continuar comprando
+			</a>
+		</div>
+	<?php
+	}
+}
 
 

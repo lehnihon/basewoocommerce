@@ -11,11 +11,12 @@ remove_action('woocommerce_after_shop_loop_item','woocommerce_template_loop_add_
 
 add_action( 'woocommerce_before_main_content',    'lki_before_content',                10 );
 add_action( 'woocommerce_after_main_content',     'lki_after_content',                 10 );
-add_action( 'woocommerce_after_single_product',    'woocommerce_output_product_data_tabs',                10 );
 add_action( 'woocommerce_after_single_product',    'woocommerce_output_related_products',                20 );
 add_action( 'wp', 'remove_sidebar' );
 add_action( 'wp_footer', 'cart_update_qty_script' );
+add_action('woocommerce_after_single_product','woocommerce_description',10);
+add_action('woocommerce_after_cart','woocommerce_button_icons',10);
+add_action('woocommerce_after_cart_totals','woocommerce_keep_buying',10);
 
 add_filter( 'woocommerce_output_related_products_args', 'related_products_args' );
-add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
 
