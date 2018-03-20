@@ -15,7 +15,6 @@ if ( ! function_exists( 'lki_before_content' ) ) {
 }
 
 if ( ! function_exists( 'lki_after_content' ) ) {
-
 	function lki_after_content() {
 		?>
 					</div>
@@ -48,7 +47,9 @@ if ( ! function_exists( 'cart_update_qty_script' ) ) {
 	    <script>
 	        jQuery('div.woocommerce').on('change', '.quantity .qty', function(){
 	            //console.log('clicked');
-	            jQuery("[name='update_cart']").trigger("click"); });
+	            jQuery("[name='update_cart']").trigger("click"); 
+	        });
+
 	    </script>
 	    <?php
 	    endif;
@@ -63,22 +64,11 @@ if ( ! function_exists( 'woocommerce_description' ) ) {
 	}
 }
 
-if ( ! function_exists( 'woocommerce_button_icons' ) ) {
-	function woocommerce_button_icons() {
-	?>
-		<script>
-			jQuery('a.checkout-button').prepend('<i class="fa fa-credit-card faa-pulse"></i>')
-		</script>
-	<?php
-	}
-}
-
 if ( ! function_exists( 'woocommerce_keep_buying' ) ) {
 	function woocommerce_keep_buying() {
 	?>
 		<div class="wc-keep-buying">
-			<a class="btn btn-outline-secondary faa-parent animated-hover" href="<?php echo home_url( '/' ); ?>">
-			<i class="fa fa-shopping-basket faa-pulse"></i>
+			<a class="btn btn-outline-secondary faa-parent" href="<?php echo home_url( '/' ); ?>">
 			Continuar comprando
 			</a>
 		</div>

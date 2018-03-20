@@ -15,7 +15,6 @@ add_action( 'woocommerce_after_single_product',    'woocommerce_output_related_p
 add_action( 'wp', 'remove_sidebar' );
 add_action( 'wp_footer', 'cart_update_qty_script' );
 add_action('woocommerce_after_single_product','woocommerce_description',10);
-add_action('woocommerce_after_cart','woocommerce_button_icons',10);
 add_action('woocommerce_after_cart_totals','woocommerce_keep_buying',10);
 
 add_filter( 'woocommerce_output_related_products_args', 'related_products_args' );
